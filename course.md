@@ -86,7 +86,58 @@ chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys
 chmod 600 /home/ubuntu/.ssh/authorized_keys
 ```
 
+#### Twee opdrachten
 
+Het is handig om eerst een lege server te hebben. Hier handmatig alles te installeren en daarvan een script bouwen.
+Houd er rekening mee dat je geen interactie kan uitvoeren.
+
+##### Creeer LIMS oaipmh server
+Stappen:
+1. installeer java (openjdk-7)
+2. Download wildfly en start het in de achtergrond (& teken)
+3. voeg system properties toe
+4. creeer lims oaipmh config bestanden
+5. clone repo
+6. build
+
+Hints:
+system-property
+```
+/opt/wildfly/bin/jboss-cli.sh -c command="/system-property=nl.naturalis.oaipmh.conf.dir:add(value=/etc/limsoaipmh)"
+/opt/wildfly/bin/jboss-cli.sh -c command="/system-property=log4j.configurationFile:add(value=/etc/limsoaipmh/log4j2.xml)"
+```
+wildfly op bereikbaar op alle ip's
+```
+standalone.sh -b 0.0.0.0
+```
+
+##### Creeer Resourcespace server
+Stappen:
+1. Installeer apache, php en mysql-server
+2. Creeer lege database
+3. Import sql dump
+4. Download resource space via svn
+5. Download config.php en pas floating ip aan
+
+Hints:
+mysql non interactive install
+```
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password your_password'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password your_password'
+```
+download naar specefiek bestand
+```
+wget url -O /path/to/file
+```
+iets in bestand aanpassen
+```
+sed -i 's/old-word/new-word/g' /path/to/file
+```
+bestanden:
+```
+https://raw.githubusercontent.com/AtzeDeVries/cursus-sd/master/resources/resourcespace.sql
+https://raw.githubusercontent.com/AtzeDeVries/cursus-sd/master/resources/config.php
+```
 
 ### Commandline overview
 ```

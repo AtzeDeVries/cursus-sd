@@ -16,7 +16,7 @@ $mysql_db = 'resourcespace';
 $mysql_bin_path = '/usr/bin';
 
 # Base URL of the installation
-$baseurl = 'http://rstest.naturalis.nl';
+$baseurl = 'http://floating-ip';
 
 # Email settings
 $email_from = 'aut@naturalis.nl';
@@ -56,7 +56,7 @@ $list_display_fields = array(8,3,12);
 $sort_fields = array(12);
 
 // Set imagemagick default for new installs to expect the newer version with the sRGB bug fixed.
-$imagemagick_colorspace = "sRGB";
+$imagemagick_colorspace = 'sRGB';
 
 $slideshow_big=true;
 $home_slideshow_width=1400;
