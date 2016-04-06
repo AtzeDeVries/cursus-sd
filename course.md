@@ -70,11 +70,11 @@ Bij het launchen van een instance kun je ook een script toevoegen. Dit geeft je 
 Voorbeeld van erg simpele website
 ```
 #!/bin/bash
-sudo apt-get update
-sudo apt-get install -y apache2 git
-sudo rm -fr /var/www/html
-sudo git clone https://github.com/AtzeDeVries/web-test /var/www/html
-sudo service apache2 restart
+apt-get update
+apt-get install -y apache2 git
+rm -fr /var/www/html
+git clone https://github.com/AtzeDeVries/web-test /var/www/html
+service apache2 restart
 ```
 
 Voorbeeld van een key toevoegen.
