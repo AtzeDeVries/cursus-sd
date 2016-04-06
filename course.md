@@ -54,6 +54,10 @@ Het aanmaken van een volume spreekt voor zich. Na het aanmaken kun je het volume
 Zodra het attached gelukt is is het volume beschikbaar. Na het aanmaken zal je ook het volume moeten formateren en mounten. Linux code
 ```
 sudo -s
+lsblk
+```
+vind je nieuwe schijf (waarschijnlijk vdb)
+```
 mkfs.ext4 /dev/vd(b)
 mkdir /data
 vim /etc/fstab -(add)-> /dev/vdb  /data ext4  defaults  0 0
