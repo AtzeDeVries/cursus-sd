@@ -44,6 +44,7 @@ Instances hebben standaard een intern ip adres. Dit ip is niet bereikbaar vanaf 
 Bij het drop down menu van je instance kun je een floating ip associeren. Als er geen floating beschikbaar is, zal je er eentje uit de centrale pool moeten halen.
 
 Als je een floating ip verwijderd, kan kun je 2 dingen doen.
+
 1. Disassociate -> Terug geven aan de pool van jouw project
 2. Release -> Terug geven aan de centrale pool
 
